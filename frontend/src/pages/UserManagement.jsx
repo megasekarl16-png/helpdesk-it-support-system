@@ -1,3 +1,4 @@
+import { API_URL } from "../config";
 import { useEffect, useState } from "react";
 import Sidebar from "../components/Sidebar";
 import "../styles/user-management.css";
@@ -23,7 +24,7 @@ const [roleMessageType, setRoleMessageType] = useState("");
     const token = localStorage.getItem("token");
 
     const response = await fetch(
-      "http://localhost:8080/api/admin/users",
+      `${API_URL}/api/admin/users`,
       {
         headers: {
           Authorization: `Bearer ${token}`,
@@ -77,7 +78,7 @@ setRoleMessageType("");
     const token = localStorage.getItem("token");
 
     const response = await fetch(
-      `http://localhost:8080/api/admin/users/${userId}/role`,
+      `${API_URL}/api/admin/users/${userId}/role`,
       {
         method: "PUT",
         headers: {
@@ -308,3 +309,4 @@ setRoleMessageType("success");
 }
 
 export default UserManagement;
+

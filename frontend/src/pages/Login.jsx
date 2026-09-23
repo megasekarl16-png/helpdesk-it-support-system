@@ -1,3 +1,4 @@
+import { API_URL } from "../config";
 import { useState } from "react";
 import { useNavigate } from "react-router";
 import "../App.css";
@@ -19,7 +20,7 @@ const loginWithCredentials = async (
     setError("");
 
     const response = await fetch(
-      "http://localhost:8080/api/auth/login",
+      `${API_URL}/api/auth/login`,
       {
         method: "POST",
         headers: {
@@ -296,3 +297,4 @@ const handleDemoLogin = async (role) => {
 }
 
 export default Login;
+

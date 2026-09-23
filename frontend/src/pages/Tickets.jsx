@@ -1,3 +1,4 @@
+import { API_URL } from "../config";
 import { useEffect, useState } from "react";
 import {
   useLocation,
@@ -71,7 +72,7 @@ const fetchTickets = async () => {
     const token = localStorage.getItem("token");
 
     const response = await fetch(
-      "http://localhost:8080/api/tickets",
+      `${API_URL}/api/tickets`,
       {
         headers: {
           Authorization: `Bearer ${token}`,
@@ -589,3 +590,4 @@ const currentTickets = filteredTickets.slice(
 }
 
 export default Tickets;
+

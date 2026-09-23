@@ -1,3 +1,4 @@
+import { API_URL } from "../config";
 import { useState } from "react";
 import { useNavigate } from "react-router";
 import Sidebar from "../components/Sidebar";
@@ -44,7 +45,7 @@ const handleSubmit = async (event) => {
 
   try {
     const response = await fetch(
-      "http://localhost:8080/api/tickets",
+      `${API_URL}/api/tickets`,
       {
         method: "POST",
 
@@ -340,3 +341,4 @@ const handleSubmit = async (event) => {
 }
 
 export default NewTicket;
+

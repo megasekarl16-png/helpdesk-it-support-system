@@ -1,3 +1,4 @@
+import { API_URL } from "../config";
 import { useEffect, useState } from "react";
 import { useNavigate, useParams } from "react-router";
 
@@ -85,7 +86,7 @@ const canReply =
     const token = localStorage.getItem("token");
 
     const response = await fetch(
-      `http://localhost:8080/api/tickets/${id}`,
+      `${API_URL}/api/tickets/${id}`,
       {
         headers: {
           Authorization: `Bearer ${token}`,
@@ -121,7 +122,7 @@ const handleStatusChange = async (newStatus) => {
     setError("");
 
     const response = await fetch(
-      `http://localhost:8080/api/tickets/${id}`,
+      `${API_URL}/api/tickets/${id}`,
       {
         method: "PUT",
 
@@ -160,7 +161,7 @@ const handleAssignToMe = async () => {
     setError("");
 
     const response = await fetch(
-      `http://localhost:8080/api/tickets/${id}/assign`,
+      `${API_URL}/api/tickets/${id}/assign`,
       {
         method: "POST",
 
@@ -202,7 +203,7 @@ const handleDelete = async () => {
     setError("");
 
     const response = await fetch(
-  `http://localhost:8080/api/tickets/${id}`,
+  `${API_URL}/api/tickets/${id}`,
   {
     method: "DELETE",
 
@@ -235,7 +236,7 @@ const fetchComments = async () => {
     const token = localStorage.getItem("token");
 
     const response = await fetch(
-      `http://localhost:8080/api/tickets/${id}/comments`,
+      `${API_URL}/api/tickets/${id}/comments`,
       {
         headers: {
           Authorization: `Bearer ${token}`,
@@ -272,7 +273,7 @@ const fetchActivities = async () => {
     const token = localStorage.getItem("token");
 
     const response = await fetch(
-      `http://localhost:8080/api/tickets/${id}/activities`,
+      `${API_URL}/api/tickets/${id}/activities`,
       {
         headers: {
           Authorization: `Bearer ${token}`,
@@ -312,7 +313,7 @@ const handleSendComment = async (event) => {
     const token = localStorage.getItem("token");
 
     const response = await fetch(
-      `http://localhost:8080/api/tickets/${id}/comments`,
+      `${API_URL}/api/tickets/${id}/comments`,
       {
         method: "POST",
 
@@ -1017,3 +1018,4 @@ const getActivityTitle = (action) => {
 }
 
 export default TicketDetail;
+

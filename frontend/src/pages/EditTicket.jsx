@@ -1,3 +1,4 @@
+import { API_URL } from "../config";
 import { useEffect, useState } from "react";
 import { useNavigate, useParams } from "react-router";
 
@@ -29,7 +30,7 @@ function EditTicket() {
         setError("");
 
         const response = await fetch(
-          `http://localhost:8080/api/tickets/${id}`,
+          `${API_URL}/api/tickets/${id}`,
           {
             headers: {
               Authorization: `Bearer ${localStorage.getItem(
@@ -119,7 +120,7 @@ function EditTicket() {
       setError("");
 
       const response = await fetch(
-        `http://localhost:8080/api/tickets/${id}`,
+        `${API_URL}/api/tickets/${id}`,
         {
           method: "PUT",
 
@@ -450,3 +451,4 @@ function EditTicket() {
 }
 
 export default EditTicket;
+

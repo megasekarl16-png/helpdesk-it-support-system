@@ -1,3 +1,4 @@
+import { API_URL } from "../config";
 import { useEffect, useState } from "react";
 
 import {
@@ -29,7 +30,7 @@ const user = storedUser
       }
 
       const response = await fetch(
-        "http://localhost:8080/api/tickets",
+        `${API_URL}/api/tickets`,
         {
           headers: {
             Authorization: `Bearer ${token}`,
@@ -244,3 +245,4 @@ const handleNavigate = (path) => {
 }
 
 export default Sidebar;
+
