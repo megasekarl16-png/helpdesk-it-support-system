@@ -92,9 +92,10 @@ public CorsConfigurationSource corsConfigurationSource() {
 
                 // Register & login tidak butuh JWT
                 .requestMatchers(
-                    "/api/auth/register",
-                    "/api/auth/login"
-                ).permitAll()
+    "/api/auth/register",
+    "/api/auth/login",
+    "/healthz"
+).permitAll()
 
                 .requestMatchers(
     "/api/admin/**"
