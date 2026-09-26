@@ -349,7 +349,7 @@ const myActiveTickets = tickets
 
             <h1>
   {getGreeting()},{" "}
-  {currentUser?.name?.split(" ")[0] || "User"} 👋
+  {currentUser?.name || "User"} 👋
 </h1>
 
 <p>
