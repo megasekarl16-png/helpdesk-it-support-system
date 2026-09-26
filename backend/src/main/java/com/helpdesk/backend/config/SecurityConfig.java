@@ -42,9 +42,10 @@ public CorsConfigurationSource corsConfigurationSource() {
             new CorsConfiguration();
 
     configuration.setAllowedOrigins(List.of(
-            "http://localhost:5173",
-            "http://localhost:5174"
-    ));
+        "http://localhost:5173",
+        "http://localhost:5174",
+        "https://helpdesk-it-support-system.megasekarl16.workers.dev"
+));
 
     configuration.setAllowedMethods(List.of(
             "GET",
